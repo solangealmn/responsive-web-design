@@ -1,0 +1,57 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: 100px 400px 200px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "header header header header header"
+  "content content content sidebar sidebar"
+  "box1 box2 box3 sidebar sidebar";
+  grid-gap: 10px;
+}
+
+header {
+  background-color: #F7EA00;
+  grid-area: header;
+}
+
+main {
+  background-color: #34EAA9;
+  grid-area: content;
+}
+.c-box{
+  background-color: #36B6E8;
+  grid-area: box1;
+  grid-column: 1;
+
+}
+.d-box{
+  background-color: #E836B1;
+  grid-area: box2;
+  grid-column: 2;
+
+}
+.e-box{
+  background-color: #F7B93C;
+  grid-area: box3;
+  grid-column: 3;
+}
+aside {
+  background-color: #E486EA;
+  grid-area: sidebar;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    grid-template-rows: 100px 400px 100px 200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header header header"
+                          "content content content"
+                          "box1 box2 box3"
+                          "sidebar sidebar sidebar";
+  }
+}
+
+/*
+break points
+
+https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile
+*/
